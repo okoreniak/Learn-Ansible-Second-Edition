@@ -9,7 +9,7 @@
   tasks:
     - name: "Output some information on our host"
       ansible.builtin.debug:
-        msg: "I am connecting to {{ ansible_nodename }} which is running {{ ansible_distribution }} {{ ansible_distribution_version }}"
+        msg: "I am connecting to {{ ansible_facts['nodename'] }} which is running {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
     - name: "Update all packages to the latest version"
       ansible.builtin.apt:
         name: "*"
